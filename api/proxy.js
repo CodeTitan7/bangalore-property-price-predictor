@@ -4,8 +4,6 @@ export default async function handler(req, res) {
   if (!API_URL) {
     return res.status(500).json({ error: "API_URL not configured in environment" });
   }
-
-  // Optional: Validate client API key
   const clientKey = req.headers["x-api-key"];
   if (BACKEND_API_KEY && clientKey !== BACKEND_API_KEY) {
     return res.status(403).json({ error: "Forbidden: Invalid API key" });
