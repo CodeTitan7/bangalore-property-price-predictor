@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangalore Home Price Predictor</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <!-- Animated Background Elements -->
+  <div class="bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle">
+    <button id="themeSwitch" class="theme-btn">
+      <span class="sun-icon">☀️</span>
+      <span class="moon-icon">🌙</span>
+    </button>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <span class="icon">🏠</span>
+        <h1>Bangalore Property Predictor</h1>
+      </div>
+      <p class="subtitle">Get accurate property price estimates powered by advanced analytics</p>
+    </header>
+
+    <div class="main-content">
+      <!-- Input Form -->
+      <div class="form-container">
+        <div class="form-header">
+          <h2>Property Details</h2>
+          <p>Enter your property specifications below</p>
+        </div>
+
+        <form class="property-form">
+          <div class="form-group">
+            <label for="uiSqft">
+              <span class="label-icon">📐</span>
+              Area (Square Feet)
+            </label>
+            <div class="input-wrapper">
+              <input type="number" id="uiSqft" value="1000" min="100" max="10000" step="50">
+              <span class="input-suffix">sq ft</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <span class="label-icon">🛏️</span>
+              Bedrooms (BHK)
+            </label>
+            <div class="options" id="uiBHKOptions">
+              <button type="button" value="1">1 BHK</button>
+              <button type="button" value="2" class="selected">2 BHK</button>
+              <button type="button" value="3">3 BHK</button>
+              <button type="button" value="4">4 BHK</button>
+              <button type="button" value="5">5+ BHK</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <span class="label-icon">🚿</span>
+              Bathrooms
+            </label>
+            <div class="options" id="uiBathOptions">
+              <button type="button" value="1">1</button>
+              <button type="button" value="2" class="selected">2</button>
+              <button type="button" value="3">3</button>
+              <button type="button" value="4">4</button>
+              <button type="button" value="5">5+</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="uiLocations">
+              <span class="label-icon">📍</span>
+              Location
+            </label>
+            <div class="select-wrapper">
+              <select id="uiLocations">
+                <option disabled selected>Loading locations...</option>
+              </select>
+              <span class="select-arrow">▼</span>
+            </div>
+          </div>
+
+          <button type="button" id="estimateBtn" class="estimate-btn">
+            <span class="btn-text">Estimate Price</span>
+            <span class="btn-icon">🔍</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-container">
+        <div class="results-header">
+          <h2>Price Estimate</h2>
+          <p>Based on current market trends</p>
+        </div>
+        
+        <div id="uiEstimatedPrice" class="price-display">
+          <div class="price-placeholder">
+            <span class="placeholder-icon">💰</span>
+            <p>Enter property details and click "Estimate Price" to get your prediction</p>
+          </div>
+        </div>
+
+        <div class="market-info">
+          <div class="info-card">
+            <h3>🏘️ Market Insights</h3>
+            <p>Bangalore real estate market shows consistent growth with premium locations commanding higher prices</p>
+          </div>
+          <div class="info-card">
+            <h3>📈 Trends</h3>
+            <p>Properties near IT hubs and metro stations typically have better appreciation potential</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 Bangalore Property Price Predictor. Estimates are indicative and based on historical data.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
