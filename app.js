@@ -112,10 +112,10 @@ function onClickedEstimatePrice() {
 
   setTimeout(() => {
     $.post('/api/proxy?route=predict_home_price', {
+      location: location,
       total_sqft: sqft,
       bhk: bhk,
-      bath: bath,
-      location: location
+      bath: bath      
     })
       .done(data => {
         resetLoading();
