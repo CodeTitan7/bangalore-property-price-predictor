@@ -113,7 +113,7 @@ function onClickedEstimatePrice() {
   const resetLoading = showLoadingState();
 
   setTimeout(() => {
-    $.post('http://127.0.0.1:5000/predict_home_price', {
+    $.post('/api/proxy?route=predict_home_price', {
       total_sqft: sqft,
       bhk: bhk,
       bath: bath,
@@ -132,7 +132,7 @@ function onClickedEstimatePrice() {
 
 // Fetch location list from API
 function loadLocations() {
-  $.get('http://127.0.0.1:5000/get_location_names')
+  $.get('/api/proxy?route=get_location_names')
     .done(data => {
       const locations = data.locations;
       const select = document.getElementById('uiLocations');
