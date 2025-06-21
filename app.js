@@ -1,4 +1,3 @@
-// Utility Functions
 function getSelectedValue(containerId) {
   const selected = document.querySelector(`#${containerId} .selected`);
   return selected ? parseInt(selected.value) : -1;
@@ -97,7 +96,6 @@ function displayPriceResult(price) {
   `;
 }
 
-// Main Price Estimation Function
 function onClickedEstimatePrice() {
   const errors = validateInputs();
   if (errors.length > 0) {
@@ -127,13 +125,12 @@ function onClickedEstimatePrice() {
         resetLoading();
         showErrorState("Unable to connect to the server. Please try again.");
       });
-  }, 800); // slight delay for animation
+  }, 800);
 }
 
-// Fetch location list from API
 function loadLocations() {
   console.log("loading locations")
-  $.get('/api/proxy?route=get_location_names')
+  $.get('/api/proxy?route=locations')
     .done(data => {
       const locations = data.locations;
       const select = document.getElementById('uiLocations');
@@ -151,7 +148,6 @@ function loadLocations() {
     });
 }
 
-// Theme Toggle
 function initThemeToggle() {
   const btn = document.getElementById('themeSwitch');
   btn.addEventListener('click', () => {
@@ -160,7 +156,6 @@ function initThemeToggle() {
   });
 }
 
-// Button group selector logic
 function initOptionSelectors() {
   const groups = ['uiBHKOptions', 'uiBathOptions'];
   groups.forEach(id => {
@@ -173,7 +168,6 @@ function initOptionSelectors() {
   });
 }
 
-// Init
 window.onload = () => {
   loadLocations();
   initThemeToggle();
