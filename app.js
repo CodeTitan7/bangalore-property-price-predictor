@@ -132,6 +132,7 @@ function onClickedEstimatePrice() {
 
 // Fetch location list from API
 function loadLocations() {
+  console.log("loading locations")
   $.get('/api/proxy?route=get_location_names')
     .done(data => {
       const locations = data.locations;
